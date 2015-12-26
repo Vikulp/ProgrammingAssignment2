@@ -22,13 +22,19 @@ check1<-as.numeric(check)
    if(check1==1)
   {
     inv<-z1
-    print(x)
   }
   else
   {
     inv<-makeCacheMatrix(x)
-    print(a)
   }
   inv
 }
 
+## Here i am defining a square x matrix, then i am calling cachcSolve function
+## of you call cachcSolve(x) more than 1 time for a given x, then it will not call makeCacheMatrix
+## it will pick up the inverse from cache global variable
+a<-c(1,5, 7)
+b<-c(3,11, 17)
+c<-c(31,131, 147)
+x<-cbind(a,b,c)
+cacheSolve(x)
